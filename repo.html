@@ -1,0 +1,154 @@
+<!-- Simple Portfolio - single HTML file
+     - Save this as simple-portfolio.html and open in a browser
+     - Change text, images, colors as needed
+-->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Simple Portfolio — Your Name</title>
+  <style>
+    :root{ --accent:#0b79d0; --bg:#f7f9fb; --card:#ffffff; --muted:#6b7280; }
+    *{box-sizing:border-box}
+    body{font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:var(--bg); color:#111}
+    .container{max-width:1000px;margin:40px auto;padding:24px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7bdff6);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+    nav a{margin-left:14px;text-decoration:none;color:var(--muted);font-weight:600}
+    nav a:hover{color:var(--accent)}
+
+    .hero{display:flex;gap:32px;align-items:center;margin-top:28px}
+    .hero-text{flex:1}
+    h1{font-size:2rem;margin:0 0 8px}
+    p.lead{margin:0 0 16px;color:var(--muted)}
+    .cta{display:inline-block;padding:10px 16px;background:var(--accent);color:#fff;border-radius:8px;text-decoration:none;font-weight:600}
+
+    .profile-photo{width:140px;height:140px;border-radius:12px;flex-shrink:0;background:linear-gradient(180deg,#fff,#eee);display:flex;align-items:center;justify-content:center;font-size:18px;color:var(--muted);border:1px solid #e6e9ee}
+
+    .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:28px}
+    .card{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+    h2{margin:0 0 12px;font-size:1.1rem}
+
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+    .project{padding:12px;border-radius:10px;background:linear-gradient(180deg,#fff,#fbfdff);border:1px solid #eef3fb}
+    .project h3{margin:0 0 8px;font-size:0.95rem}
+    .project p{margin:0;color:var(--muted);font-size:0.9rem}
+
+    .skills{display:flex;flex-wrap:wrap;gap:8px}
+    .skill{padding:6px 10px;border-radius:999px;border:1px solid #e6eef8;font-weight:600;font-size:0.85rem;background:white}
+
+    form{display:flex;flex-direction:column;gap:8px}
+    input,textarea{padding:10px;border-radius:8px;border:1px solid #e6e9ee}
+    button{padding:10px 12px;border-radius:8px;border:0;background:var(--accent);color:#fff;font-weight:700}
+
+    footer{text-align:center;color:var(--muted);margin-top:28px;font-size:0.9rem}
+
+    /* Responsive */
+    @media (max-width:720px){
+      .hero{flex-direction:column;align-items:flex-start}
+      .grid{grid-template-columns:1fr}
+      nav a{margin-left:10px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">SB</div>
+        <div>
+          <div style="font-weight:700">Your Name</div>
+          <div style="font-size:0.85rem;color:var(--muted)">Frontend Developer • Designer</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hello — I'm Your Name</h1>
+        <p class="lead">I build simple, beautiful web interfaces and clean front-end code. I enjoy turning ideas into real products. Available for freelance or full-time roles.</p>
+        <a class="cta" href="#contact">Get in touch</a>
+      </div>
+      <div class="profile-photo">Photo</div>
+    </section>
+
+    <div class="grid">
+      <div class="card" id="about">
+        <h2>About me</h2>
+        <p style="color:var(--muted);line-height:1.6">I'm a web developer who loves building user-friendly, accessible websites. I focus on performance, responsiveness and clear design. In my spare time I enjoy learning new frameworks and contributing to open-source.</p>
+        <div style="margin-top:12px">
+          <strong>Location:</strong> Your City • <strong>Email:</strong> you@example.com
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Quick facts</h2>
+        <ul style="margin:0;padding-left:18px;color:var(--muted)">
+          <li>3+ years building web apps</li>
+          <li>Focus: HTML, CSS, JavaScript</li>
+          <li>Open to collaboration</li>
+        </ul>
+      </div>
+
+      <div class="card" style="grid-column:1/-1" id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+          <article class="project">
+            <h3>School Management Panel</h3>
+            <p>Full-stack app with admin dashboard, user roles and reports. (Example)</p>
+          </article>
+
+          <article class="project">
+            <h3>Portfolio Website</h3>
+            <p>Responsive single-page portfolio showcasing projects and contact form.</p>
+          </article>
+
+          <article class="project">
+            <h3>Simple To-do App</h3>
+            <p>Vanilla JS to-do with localStorage and mobile-friendly UI.</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Skills</h2>
+        <div class="skills">
+          <div class="skill">HTML</div>
+          <div class="skill">CSS</div>
+          <div class="skill">JavaScript</div>
+          <div class="skill">React (basic)</div>
+          <div class="skill">Git</div>
+        </div>
+      </div>
+
+      <div class="card" id="contact">
+        <h2>Contact</h2>
+        <p style="color:var(--muted)">Want to work together? Send a quick message:</p>
+        <form action="mailto:you@example.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your name" required>
+          <input type="email" name="email" placeholder="Your email" required>
+          <textarea name="message" rows="4" placeholder="Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      © <span id="year"></span> Your Name • Built with ❤️
+    </footer>
+  </div>
+
+  <script>
+    // Small niceties
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
